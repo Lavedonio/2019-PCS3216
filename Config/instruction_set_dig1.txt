@@ -1,0 +1,14 @@
+Instrução1        Cod_hex
+jp                  $0
+jz                  $1
+jn                  $2
+bkpt                $3
+add                 $4
+sub                 $5
+mul                 $6
+div                 $7
+load                $8
+move                $9
+sc                  $A
+i                   $B
+o                   $C
