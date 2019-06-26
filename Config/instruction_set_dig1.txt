@@ -1,14 +1,14 @@
-Instrução1        Cod_hex
-jp                  $0
-jz                  $1
-jn                  $2
-bkpt                $3
-add                 $4
-sub                 $5
-mul                 $6
-div                 $7
-load                $8
-move                $9
-sc                  $A
-i                   $B
-o                   $C
+Instrução1        Cod_hex       Args
+jp                  $0          A
+jz                  $1          RA
+jn                  $2          RA
+bkpt                $3          -
+add                 $4          RRR
+sub                 $5          RRR
+mul                 $6          RRR
+div                 $7          RRR
+load                $8          R#
+move                $9          RR
+sc                  $A          A
+i                   $B          R
+o                   $C          R
