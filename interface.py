@@ -9,10 +9,16 @@ def menu():
 
 
 def instrucoes_compilar():
+    print("")
     print("Coloque o arquivo .asm no diretório \"Arquivos_ASM\".")
     print("Pressione ENTER para continuar...")
     input()
     return input("Digite o nome do arquivo (com extensão .asm): ")
+
+
+def instrucoes_loader():
+    print("")
+    return input("Digite o nome do arquivo (com extensão .hex): ")
 
 
 def teste():
@@ -21,6 +27,8 @@ def teste():
     print("")
     print("Teste da função instrucoes_compilar():")
     print(instrucoes_compilar())
+    print("Teste da função instrucoes_loader():")
+    print(instrucoes_loader())
 
 if __name__ == "__main__":
     teste()
