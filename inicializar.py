@@ -23,6 +23,7 @@ class Inicializar_Memoria_Virtual(object):
             linha.append("00")
 
         for i in range(int(0x110) // int(0x10)):
+            linha = linha[:]
             init_mem.append(linha)
 
         self.mem = init_mem
@@ -37,6 +38,7 @@ class Inicializar_Memoria_Virtual(object):
             linha.append("00")
 
         for i in range(int(0x110) // int(0x10)):
+            linha = linha[:]
             init_mem.append(linha)
 
         self.mem = init_mem
@@ -67,6 +69,41 @@ class Inicializar_Memoria_Virtual(object):
         self.A1 = int(registradores[10] + registradores[11], 16)
         self.A2 = int(registradores[12] + registradores[13], 16)
         self.PC = int(registradores[14] + registradores[15], 16)
+
+    def atualizar_memoria(self):
+        ''' Atualiza a memória da linha ocultacom os valores dos registradores. '''
+
+        D0 = "{:04X}".format(self.D0)
+        self.mem[0][0] = D0[:2]
+        self.mem[0][1] = D0[2:]
+
+        D1 = "{:04X}".format(self.D1)
+        self.mem[0][2] = D1[:2]
+        self.mem[0][3] = D1[2:]
+
+        D2 = "{:04X}".format(self.D2)
+        self.mem[0][4] = D2[:2]
+        self.mem[0][5] = D2[2:]
+
+        D3 = "{:04X}".format(self.D3)
+        self.mem[0][6] = D3[:2]
+        self.mem[0][7] = D3[2:]
+
+        A0 = "{:04X}".format(self.A0)
+        self.mem[0][8] = A0[:2]
+        self.mem[0][9] = A0[2:]
+
+        A1 = "{:04X}".format(self.A1)
+        self.mem[0][10] = A1[:2]
+        self.mem[0][11] = A1[2:]
+
+        A2 = "{:04X}".format(self.A2)
+        self.mem[0][12] = A2[:2]
+        self.mem[0][13] = A2[2:]
+
+        PC = "{:04X}".format(self.PC)
+        self.mem[0][14] = PC[:2]
+        self.mem[0][15] = PC[2:]
 
     def mostrar(self):
         ''' Mostra o estado atual da memória. '''
